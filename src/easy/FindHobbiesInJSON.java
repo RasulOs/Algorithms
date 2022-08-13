@@ -1,9 +1,15 @@
 /*
 Java REST GET Simple
-In the Java file, write a program to perform a GET request on the route https://coderbyte.com/api/challenges/json/rest-get-simple and then print to the console the hobbies property in the following format: ITEM1, ITEM2, ...
+In the Java file, write a program to perform a GET request on the route
+https://coderbyte.com/api/challenges/json/rest-get-simple and then print to the console the hobbies property in the
+following format: ITEM1, ITEM2, ...
 
 Example Output
 running, painting
+
+Example of a JSON:
+
+{"name":"John Smith","age":25,"hobbies":["running","coding","camping"]}
 */
 
 package easy;
