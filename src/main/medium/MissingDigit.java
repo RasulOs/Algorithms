@@ -131,6 +131,7 @@ public class MissingDigit {
         return String.valueOf(result);
     }
 
+    // You can enter equation from the terminal or from the new String
     public static void main (String[] args) {
         // keep this function call here
         Scanner s = new Scanner(System.in);

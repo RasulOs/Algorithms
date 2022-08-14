@@ -49,7 +49,7 @@ public class NextGreaterNumber {
             numberArray[i] = numString.charAt(i) - '0';
         }
 
-        // Find the smallest possible int to change and the sort everything after it
+        // Find the smallest possible int to change and then sort everything after it
         for(int i = numberArray.length - 1; i >= 0; i--) {
             for(int j = numberArray.length - 1; j >= i; j--) {
                 if(numberArray[j] > numberArray[i]) {
@@ -68,9 +68,8 @@ public class NextGreaterNumber {
     // It has 2 implementations, 1 - using library, 2 - using selection sort
     public static void sortArrayAfterIndex(int[] array, int index) {
 
-        // We can use this special function but also we can implement it ourself
+        // We can use this special function but also we can implement it ourselves
         //Arrays.sort(array, index, array.length);
-
 
         // Using selection sort
         for(int i = index; i < array.length; i++) {
@@ -80,8 +79,6 @@ public class NextGreaterNumber {
                 }
             }
         }
-
-
     }
 
     public static int convertArrayToInt(int[] array) {
@@ -102,9 +99,6 @@ public class NextGreaterNumber {
         // keep this function call here
         Scanner s = new Scanner(System.in);
         System.out.print(PermutationStep(s.nextInt()));
-
-
-
     }
 
 }

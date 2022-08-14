@@ -17,7 +17,7 @@ public class MissingDigitTest {
 
     @BeforeEach
     public void setUp() {
-        logger = LogManager.getLogger(MissingDigit.class);
+        logger = LogManager.getLogger(MissingDigitTest.class);
 
         logger.info("Initializing MissingDigitTest");
 
