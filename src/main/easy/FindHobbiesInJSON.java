@@ -12,7 +12,7 @@ Example of a JSON:
 {"name":"John Smith","age":25,"hobbies":["running","coding","camping"]}
 */
 
-package easy;
+package main.easy;
 
 import java.io.*;
 import java.net.*;

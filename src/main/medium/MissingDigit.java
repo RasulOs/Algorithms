@@ -1,7 +1,7 @@
-package medium;/*
+package main.medium;/*
 Missing Digit
 
-Have the function medium.MissingDigit(str) take the str parameter, which will be a simple mathematical formula with
+Have the function main.medium.MissingDigit(str) take the str parameter, which will be a simple mathematical formula with
 three numbers, a single operator (+, -, *, or /) and an equal sign (=) and return the digit that completes
 the equation. In one of the numbers in the equation, there will be an x character, and your program should
 determine what digit is missing. For example, if str is "3x + 12 = 46" then your program should output 4.
@@ -22,7 +22,7 @@ Output: 0
 
 import java.util.*;
 
-class MissingDigit {
+public class MissingDigit {
 
     public static String missingDigit(String str) {
 
@@ -47,10 +47,19 @@ class MissingDigit {
 
         } else if(lhs[1].contains("x")) {
             length = lhs[0].length();
-            makeOpposite = true;
-            operator = findOperator(str, length, makeOpposite);
-            result = evaluateExpression(array[1], lhs[0], operator);
-            returningValue = findMiss(result, lhs[1]);
+            makeOpposite = false;
+
+            if (str.charAt(length) == '*' || str.charAt(length) == '+') {
+                makeOpposite = true;
+                operator = findOperator(str, length, makeOpposite);
+                result = evaluateExpression(array[1], lhs[0], operator);
+                returningValue = findMiss(result, lhs[1]);
+            } else {
+                operator = findOperator(str, length, makeOpposite);
+                result = evaluateExpression(lhs[0], array[1], operator);
+                returningValue = findMiss(result, lhs[1]);
+            }
+
 
 
         } else if(array[1].contains("x")) {
@@ -125,7 +134,8 @@ class MissingDigit {
     public static void main (String[] args) {
         // keep this function call here
         Scanner s = new Scanner(System.in);
-        System.out.print(missingDigit(s.nextLine()));
+        //System.out.print(missingDigit(s.nextLine()));
+        System.out.print(missingDigit("39 - x3 = 6"));
     }
 }
 

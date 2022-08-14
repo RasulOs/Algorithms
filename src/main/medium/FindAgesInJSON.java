@@ -18,10 +18,9 @@ Example of a JSON:
 */
 
 
-package medium;
+package main.medium;
 
 import java.net.*;
-import java.util.*;
 import java.io.*;
 
 public class FindAgesInJSON {

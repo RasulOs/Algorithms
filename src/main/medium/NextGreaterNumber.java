@@ -33,7 +33,7 @@ smallest of all greater numbers)
 
 
 
-package medium;
+package main.medium;
 
 import java.util.Scanner;
 
