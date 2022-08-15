@@ -31,6 +31,23 @@ smallest of all greater numbers)
 
 */
 
+/*
+Solution has O(n) time complexity.
+
+The algorithm works like this:
+
+1: Tries to find any digit which has any bigger digit on the right side (the number will be called index)
+    351321 ->  35 1 321 -> 3 is bigger than 3
+
+2: Swaps these 2 numbers:
+    351321 -> 35 3 1 21
+
+3: Sorts all digit in ascending order after the index
+    353121 -> 353112
+
+You can notice that all number after index are already sorted in descending order so we can just reverse it
+and by this we get O(n) time complexity.
+*/
 
 
 package main.medium;
@@ -65,19 +82,28 @@ public class NextGreaterNumber {
     }
 
     // This function sorts an array after some position (index)
-    // It has 2 implementations, 1 - using library, 2 - using selection sort
+    // It has 3 implementations, 1 - using library, 2 - using selection sort, 3 - using simple swap technique
+    // with O(n) time complexity.
+    // Third technique is based on the idea that numbers are already sorted after index because
+    // algorithm tries to find any number which has bigger neighbour on the right side and calls it the
+    // index and swaps it. And if numbers after this index are already sorted in descending order you just need to
+    // reverse the orderd.
     public static void sortArrayAfterIndex(int[] array, int index) {
 
         // We can use this special function but also we can implement it ourselves
         //Arrays.sort(array, index, array.length);
 
         // Using selection sort
-        for(int i = index; i < array.length; i++) {
-            for(int j = i + 1; j < array.length; j++) {
-                if(array[i] > array[j]) {
-                    swap(array, i, j);
-                }
-            }
+//        for(int i = index; i < array.length; i++) {
+//            for(int j = i + 1; j < array.length; j++) {
+//                if(array[i] > array[j]) {
+//                    swap(array, i, j);
+//                }
+//            }
+//        }
+
+        for (int i = 0; i < (array.length - index) / 2; i++) {
+            swap(array, i + index, array.length - 1 - i);
         }
     }
 

@@ -21,6 +21,7 @@ public class NextGreaterNumberTest {
     public void testValidNumber() {
         assertEquals(NextGreaterNumber.PermutationStep(312), 321);
         assertEquals(NextGreaterNumber.PermutationStep(343215), 343251);
+        assertEquals(NextGreaterNumber.PermutationStep(498764321), 612344789);
         assertEquals(NextGreaterNumber.PermutationStep(21932), 22139);
         assertEquals(NextGreaterNumber.PermutationStep(854248), 854284);
         assertEquals(NextGreaterNumber.PermutationStep(21331), 23113);
