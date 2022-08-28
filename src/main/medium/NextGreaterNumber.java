@@ -37,7 +37,7 @@ Solution has O(n) time complexity.
 The algorithm works like this:
 
 1: Tries to find any digit which has any bigger digit on the right side (the number will be called index)
-    351321 ->  35 1 321 -> 3 is bigger than 3
+    351321 ->  35 1 321 -> 3 is bigger than 1
 
 2: Swaps these 2 numbers:
     351321 -> 35 3 1 21
